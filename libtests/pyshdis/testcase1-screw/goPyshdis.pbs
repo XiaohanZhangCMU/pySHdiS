@@ -1,0 +1,13 @@
+#!/bin/bash
+#SBATCH --job-name=pyshdis
+#format could be dd-hh:mm:ss, hh:mm:ss, mm:ss, or mm
+#SBATCH -p mc
+#SBATCH --time=1-0:0:0
+#SBATCH --qos=long
+#SBATCH --nodes=1
+#SBATCH --mem=20000
+#SBATCH --mail-type=END,FAIL 
+#SBATCH --mail-user=xzhang11@stanford.edu
+
+python pyshdis.py frank_read_src_imp > out.txt
+wait

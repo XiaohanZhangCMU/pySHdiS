@@ -1,0 +1,120 @@
+dirname = "SingleLine_results/"
+
+#
+#Simulation cell and processor setup
+#
+
+#The total number of CPUs should be numXdoms * numYdoms * numZdoms
+numXdoms = 1
+numYdoms = 1
+numZdoms = 1
+
+#Cells for dislocation grouping (cannot be less than 3)
+numXcells = 4
+numYcells = 4
+numZcells = 4 
+
+fmEnabled = 1
+fmMPOrder = 2
+fmTaylorOrder = 5
+#fmCorrectionTbl = "inputs/fm-ctab.m2.t4.dat"
+fmCorrectionTbl = "../../../inputs/fm-ctab.Cu.m2.t5.dat"
+
+
+#Boundary conditions
+xBoundType = 0 
+yBoundType = 0
+zBoundType = 0
+
+DLBfreq = 0
+
+
+#
+#ThinFilm ParaMeters
+#
+
+#TF_halfthickness = 119
+#TF_nx = 101
+#TF_ny = 101
+#TF_nbimages = 0
+#TF_VSLength =10000.000000
+
+
+#
+#Simulation time and timestepping controls
+#
+
+#Total simulation steps
+maxstep = 4000
+
+#Maximum time step
+maxDT = 1e9
+timestepIntegrator = "trapezoid"
+
+#Maximum nodal displacement at each time step
+#rmax = 0.1 #14.875
+
+#Error tolerance in determining time step
+rTol = 0.005
+
+
+#
+#Descretization controls
+#
+
+#Discretization
+#maxSeg = 3000
+maxSeg = 2
+#minSeg = 2
+minSeg = 0.5
+
+
+
+
+#Tables for non-FMM far-field force calcs
+Rijmfile = "../../../inputs/Rijm.cube.out"
+RijmPBCfile = "../../../inputs/RijmPBC.cube.out"
+
+
+#
+#Loading conditions
+#
+
+#Applied stress in Pa (xx,yy,zz,yz,zx,xy)
+appliedStress = [ 0 0 0 0 0 0 ]
+
+
+#
+#Material and mobility parameters
+#
+
+
+#Mobility law function
+mobilityLaw = "RELAX"
+MobScrew = 1
+MobEdge  = 0
+MobClimb = 0
+shearModulus = 1
+pois = 3.240000e-01
+
+#Core cut-off radius
+rc = 0.0100
+
+
+#Core energy
+Ecore = 0.000000e+000
+
+#Turn on elastic interaction
+elasticinteraction = 1
+
+#Turn on remesh rule
+remeshRule = 2
+
+#Save cn and data files
+savecn =1 
+savecnfreq = 1
+saveprop = 1
+savepropfreq = 1
+
+gnuplot =0
+

@@ -1,0 +1,12 @@
+The build/ folder is intended for building the executables using CMake.  
+
+For example, while in this folder, you can use
+
+  cmake ../src
+
+If the build is successful, this should create the executable file "paradis".
+
+To remove CMake created files, use
+
+  make clean-all
+

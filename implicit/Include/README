@@ -1,0 +1,7 @@
+For reasons still not clear, we need to copy InData.h and Init.h
+ from ../../include folder to this folder, for the code to
+ compile correctly.
+
+Most likely this is because we have changed the size of the
+ Node structure, which requires the size of inData structure
+ to change too.

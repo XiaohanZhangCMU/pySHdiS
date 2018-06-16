@@ -1,0 +1,104 @@
+#Directory to write output files
+dirname = "Results"
+
+##########################################################
+#Simulation cell and processor setup
+
+#The total number of CPUs should be numXdoms * numYdoms * numZdoms
+numXdoms = 1
+numYdoms = 1
+numZdoms = 1
+
+#Cells for dislocation grouping (cannot be less than 3)
+numXcells = 4
+numYcells = 4
+numZcells = 4
+
+#Boundary conditions
+xBoundType = 1
+yBoundType = 1
+zBoundType = 1
+
+DLBfreq = 0
+
+##########################################################
+#ThinFilm ParaMeters
+abq_thickness = 100
+abq_nx = 40
+abq_ny = 40
+abq_nz = 30
+abq_pbcXY = 0
+abq_VSlength = 10000.000000
+nQuadSurface = 6
+abq_ncpus = 4
+tf_or_hs = tf
+#abq_elemType = "hexahedral"
+abq_elemType = "tetrahedral"
+abq_elemOrder = "quadratic"
+
+##########################################################
+#Simulation time and timestepping controls
+maxstep            = 10000          #Total simulation steps
+maxDT              = 0.001          #Maximum time step
+rTol               = 0.5e-1         #Error tolerance in determining time step
+timestepIntegrator = "trapezoid"
+
+##########################################################
+#Descretization controls
+maxSeg = 2.0e0
+minSeg = 1.0e0
+
+##########################################################
+#Material and mobility parameters
+mobilityLaw   = "FCC_0"
+shearModulus  = 1
+pois          = 0.3
+burgMag       = 1 # 2.875401e-10     #Fundamental length unit
+rc            = 1.0e-1    #Core cut-off radius
+MobScrew      = 1e4
+MobEdge       = 1e4
+MobClimb      = 1
+Ecore         = 0.079577472     #Core energy
+
+elasticinteraction = 1   #Turn on elastic interaction
+enforceGlidePlanes = 1
+enableCrossSlip    = 0
+CollisionMethod    = 2
+remeshRule         = 2   #Turn on remesh rule
+
+##########################################################
+#Loading conditions
+loadType      = 0
+appliedStress = [ 0 0 0.08  0 0 0 ]     #Applied stress in Pa (xx,yy,zz,yz,zx,xy)
+#TempK        = 300.000000
+
+##########################################################
+#Fast Multipole Method controls
+
+fmEnabled = 0  #disable fast multipole
+fmMPOrder = 2
+fmTaylorOrder = 5
+fmCorrectionTbl = "../../../../inputs/fm-ctab.Ta.600K.0GPa.m2.t5.dat"
+
+#Tables for non-FMM far-field force calcs
+Rijmfile = "../../../../inputs/Rijm.cube.out"
+RijmPBCfile = "../../../../inputs/RijmPBC.cube.out"
+winDefaultsFile = "../../../../inputs/paradis.xdefaults"
+
+##########################################################
+#Save cn and data files
+savecn = 1
+savecnfreq = 1
+savecncounter =   0  
+gnuplot =   1  
+gnuplotfreq =   1
+gnuplotcounter =   0  
+povray =   1  
+povrayfreq =   1
+povraycounter =   0  
+saveprop =   1
+savepropfreq =   1
+writeForce = 1
+writeForceFreq = 1
+velfile = 1
+velfilefreq = 1

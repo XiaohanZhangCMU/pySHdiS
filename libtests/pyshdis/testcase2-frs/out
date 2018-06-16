@@ -1,0 +1,65 @@
+16,23d15
+< global PY3
+< if sys.version_info[0] < 3:
+<   PY3 = True
+<   print("Use Python3")
+< else:
+<   PY3 = False
+<   print("Use Python2")
+< 
+109c101
+<     def count(self, sub, start=0, end=sys.maxsize):
+---
+>     def count(self, sub, start=0, end=sys.maxint):
+127c119
+<     def endswith(self, suffix, start=0, end=sys.maxsize):
+---
+>     def endswith(self, suffix, start=0, end=sys.maxint):
+131c123
+<     def find(self, sub, start=0, end=sys.maxsize):
+---
+>     def find(self, sub, start=0, end=sys.maxint):
+133c125
+<     def index(self, sub, start=0, end=sys.maxsize):
+---
+>     def index(self, sub, start=0, end=sys.maxint):
+153c145
+<     def rfind(self, sub, start=0, end=sys.maxsize):
+---
+>     def rfind(self, sub, start=0, end=sys.maxint):
+155c147
+<     def rindex(self, sub, start=0, end=sys.maxsize):
+---
+>     def rindex(self, sub, start=0, end=sys.maxint):
+167c159
+<     def startswith(self, prefix, start=0, end=sys.maxsize):
+---
+>     def startswith(self, prefix, start=0, end=sys.maxint):
+388c380
+<         except OSError as e:
+---
+>         except OSError,e:
+2039c2031
+< for _lib in _libs.values():
+---
+> for _lib in _libs.itervalues():
+2048c2040
+< for _lib in _libs.values():
+---
+> for _lib in _libs.itervalues():
+2057c2049
+< for _lib in _libs.values():
+---
+> for _lib in _libs.itervalues():
+2066c2058
+< for _lib in _libs.values():
+---
+> for _lib in _libs.itervalues():
+2075c2067
+< for _lib in _libs.values():
+---
+> for _lib in _libs.itervalues():
+2084c2076
+< for _lib in _libs.values():
+---
+> for _lib in _libs.itervalues():
